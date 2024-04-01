@@ -52,14 +52,14 @@ function Videos(props: { channelName: string; AppID: string }) {
        const deviceLoading = isLoadingMic || isLoadingCam;
        if (deviceLoading)
               return (
-                     <div className="flex flex-col items-center pt-40">Loading devices...</div>
+                     <div className="flex flex-col items-center pt-40">Loading</div>
               );
        const unit = "minmax(0, 1fr) ";
 
        return (
-              <div className="flex flex-col justify-between w-full h-screen p-1">
+              <div className="flex flex-col justify-between w-full h-screen p-10 rounded-xl pb-20">
                      <div
-                            className={`grid  gap-1 flex-1`}
+                            className={`flex gap-4 rounded-xl flex-1`}
                             style={{
                                    gridTemplateColumns:
                                           remoteUsers.length > 9
@@ -71,11 +71,13 @@ function Videos(props: { channelName: string; AppID: string }) {
                                                                : unit,
                             }}
                      >
-                            <LocalVideoTrack
-                                   track={localCameraTrack}
-                                   play={true}
-                                   className="w-full h-full"
-                            />
+                            <div className="h-[170px] w-[250px] rounded-lg fixed z-10 bottom-0 right-0 flex justify-center m-16 mb-24">
+                                   <LocalVideoTrack
+                                          track={localCameraTrack}
+                                          play={true}
+                                          className="w-full h-full"
+                                   />
+                            </div>
                             {remoteUsers.map((user) => (
                                    <RemoteUser key={user.uid} user={user} />
                             ))}
