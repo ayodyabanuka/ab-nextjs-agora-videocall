@@ -12,7 +12,7 @@ export default function Page({ params }: { params: { channelName: string } }) {
                      <p className="absolute z-10 mt-2 ml-12 text-2xl font-bold text-gray-900">
                             {params.channelName!}
                      </p>
-                     <Call appId={process.env.APP_ID!} channelName={params.channelName}></Call>
+                     <Call appId={'5ad9d828d4ab48c08c08d195fee669c5'} channelName={params.channelName}></Call>
               </main>
        )
 }
