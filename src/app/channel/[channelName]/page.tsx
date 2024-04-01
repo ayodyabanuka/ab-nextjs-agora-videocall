@@ -1,7 +1,7 @@
 "use client"
 
 import Call from "@/components/call"
-import { useEffect } from "react"
+
 
 
 export default function Page({ params }: { params: { channelName: string } }) {
